@@ -22,8 +22,8 @@ setup(
     url='https://github.com/torchbox/wagtail-markdown',
 
     install_requires=[
-        'Markdown==2.6.2',
-        'bleach==1.4.2',
+        'Markdown==2.6.9',
+        'bleach==2.1.1',
     ],
     license='zlib license',
 
