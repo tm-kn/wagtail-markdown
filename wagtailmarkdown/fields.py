@@ -42,7 +42,7 @@ class MarkdownBlock(TextBlock):
         self.field = forms.CharField(required=required, help_text=help_text, widget=MarkdownTextarea())
         super(MarkdownBlock, self).__init__(**kwargs)
 
-    def render_basic(self, value):
+    def render_basic(self, value, context=None):
         return wagtailmarkdown.utils.render(value)
 
     @property
@@ -58,9 +58,9 @@ class MarkdownBlock(TextBlock):
 
 class MarkdownField(TextField):
     def formfield(self, **kwargs):
-        defaults = {'widget': MarkdownTextarea}                                                  
-        defaults.update(kwargs)                                                              
-        return super(MarkdownField, self).formfield(**defaults)                              
+        defaults = {'widget': MarkdownTextarea}
+        defaults.update(kwargs)
+        return super(MarkdownField, self).formfield(**defaults)
 
     def __init__(self, **kwargs):
         super(MarkdownField, self).__init__(**kwargs)
